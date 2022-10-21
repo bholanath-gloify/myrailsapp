@@ -1,0 +1,12 @@
+
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Book") do |sheet|
+  # this is the head row of your spreadsheet
+  sheet.add_row %w(title published_at language library_name user_name)
+  
+  # each user is a row on your spreadsheet
+  @books.each do |book|
+    sheet.add_row [book.title, book.published_at, book.language, book.library.name, book.user.name]
+  end
+end

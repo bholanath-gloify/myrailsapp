@@ -1,0 +1,20 @@
+<div class="container">
+
+<%= form_for :library do |f| %>
+  <div>
+    <label>Library Name</lable> <br/>
+    <%= f.text_field :name ,:class=>"lib-text" , required: true %><br><br>
+
+    <label>Opening Time</label> <br/>
+    <%= f.time_field :opening_time,:class=>"lib-text" , required: true %><br><br>
+
+    <label>Closing Time</label> <br/>
+    <%= f.time_field :closing_time,:class=>"lib-text" , required: true %>
+  </div>
+  <br/>
+
+  <div class="submit-css">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>

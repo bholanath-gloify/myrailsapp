@@ -1,0 +1,56 @@
+<html lang="en" dir="ltr">
+<title></title>
+
+  <head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  </head>
+  <body>
+
+<div class="container">   
+<% if !flash[:notice].blank? %>   
+   <div>   
+      <%= flash[:notice] %>   
+   </div>   
+<% end %>   
+  
+<br>   
+  
+<%= link_to "New Resume", new_resume_path , :class=> "btn btn-success" %>   
+<br>   
+<br>   
+
+<div>&nbsp;</div>
+  
+<table border="3" style="width: 50%;height: 140px">   
+   <thead>   
+      <tr>   
+         <th>Candidate Name</th>   
+         <th>Download Link</th>   
+         <th>Action</th>   
+      </tr>   
+   </thead>   
+      
+   <tbody>   
+      <% @resumes.each do |resume| %>   
+            
+         <tr>   
+            <td><%= resume.name %></td>   
+            <td><%= link_to "Download", resume.attachment_url, target: '_blank' ,:class=>"btn btn-primary" %></td>   
+            <td>
+               <%= link_to "Show", resume, :class=>"btn btn-info" %>
+               <%= link_to "Delete",  resume, method: :delete, data: { confirm: 'Are you sure delete this resume?'}, :class=>"btn btn-warning" %>
+            </td>   
+         </tr>   
+            
+      <% end %>   
+   </tbody>   
+      
+</table>   
+</div>  
+</body>
+</html>

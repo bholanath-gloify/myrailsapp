@@ -1,0 +1,33 @@
+<html lang="en" dir="ltr">
+<title></title>
+
+  <head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  </head>
+  <body>    
+        
+            <div>&nbsp;</div><div>&nbsp;</div>
+            <div class="container">
+                <div>
+                    <%= form_for @resume, html: { multipart: true } do |f| %> 
+                    <%= f.label :name %>
+                     <%= f.text_field :name %>
+                    <br />
+                    <br />
+                    <%= f.label :attachment %>
+                    <%= f.file_field :attachment, :multiple=> 'true' %>
+                    <br />
+                    <%= f.submit "Save" %> <% end %>
+                </div>
+            </div>
+            <div>&nbsp;</div><div>&nbsp;</div>
+            <%= link_to "Resume Page" , resumes_path, :class=>"btn btn-info" %>
+    </body>
+</html>
+
+

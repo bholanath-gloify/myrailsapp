@@ -1,0 +1,26 @@
+<html lang="en" dir="ltr">
+<title></title>
+
+  <head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  </head>
+  <body>
+
+<h1>Editing Library</h1>
+
+<%= render "form", library: @library %>
+
+<br>
+
+<div>
+  <%= link_to "Back to Libraries", library_path , :class=> "btn btn-success" %>
+  <%= link_to "Add new Library", new_library_path  , :class=> "btn btn-primary" %>
+</div>
+
+</body>
+</html>

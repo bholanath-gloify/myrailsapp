@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+
+    <h1>Welcome <%=  @book.user.name.upcase %> ,</h1>
+    <p>
+      You have assigned a new Book.<br/>
+      Book Name: <%= @book.title %> <br/>
+      Book Published Date: <%= @book.published_at %><br/>
+      Book Language: <%= @book.language %><br/>
+      Library Name: <%= @book.library.name  %>
+    </p>
+    
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

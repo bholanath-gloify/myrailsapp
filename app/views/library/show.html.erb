@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<title></title>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  </head>
+  <body>
+
+<div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><h2>Library Name</h2></th>
+          <th><h2>Total No Of Books</h2></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td><h3><%= @library.name %></h3></td>
+          <td><h3><%= @library.books&.count %></h3></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th><h2>Book Title</h2></th>
+          <th><h2>Author Name</h2></th>
+          <th><h2>Publication Date</h2></th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% @books.each do |book| %>
+        <tr>
+          <td><h3><%= book.title %></h3></td>
+          <td><h3><%= book.user.name%></h3></td>
+          <td><h3><%= book.published_at %></h3></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    
+
+
+
+    <a href="/" class="btn btn-success">Back to Home<a>
+</div>
+  </body>
+</html>

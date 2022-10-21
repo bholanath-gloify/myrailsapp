@@ -1,0 +1,33 @@
+
+
+<div class="container">
+
+
+<%= form_for :book do |f| %>
+  <div>
+      <%= f.label :"Book Title", :class=>"label-book" %>
+      <%= f.text_field :title , :class=>"field-book", required: true %><br/>
+      <br/>
+      <%= f.label :"Published At", :class=>"label-book" %>
+      <%= f.date_field :published_at ,:class=>"field-book", required: true %><br/>
+      <br/>
+      <%= f.label :"Language", :class=>"label-book" %>
+      <%= f.text_field :language, :class=>"field-book", required: true %><br/>
+      <br/>
+      <%= f.label :"Library Name", :class=>"label-book" %>
+      <%= f.select :library_id, options_from_collection_for_select(@libraries, :id, :name), :prompt => "Select Library", :class=>"dropdown-book", :required => true  %>
+     <br/><br/>
+      <%= f.label :"Author Name", :class=>"label-book" %>
+      <%= f.select :user_id, options_from_collection_for_select(@authors, :id, :name), :prompt => "Select Author", :class=>"dropdown-book", :required => true  %>
+
+
+
+  <br/><br/>
+  <div class="create-edit-book"">
+      <%= f.submit%></div>
+  </div>
+<% end %>
+
+
+</div>
+

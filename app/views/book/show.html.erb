@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<title></title>
+
+  <head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  </head>
+  <body>
+
+    <div class="container">
+
+    <h1 class="main-book-heading">Book Details</h1>
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Title Of Book</th>
+        <th>Published At</th>
+        <th>Book Language</th>
+        <th>Library Name</th>
+        <th>Author Name</th>
+        <th colspan="3">Edit/Destroy Books</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+        <tr>
+          <td><%= @books.title %></td>
+          <td><%= @books.published_at %></td>
+          <td><%= @books.language %></td>
+          <td><%= @books.library&.name %></td>
+          <td><%= @books.user&.name %></td>
+
+          <td><%= link_to 'Edit', edit_book_path(@books),style:  "text-decoration:none; border:1px; background-color:royalblue; padding:8px; color:white" %></td>
+          <td><%= link_to 'Destroy', @books, method: :delete, data: { confirm: 'Are you sure delete this book?'},style:"text-decoration:none; border:1px; background-color:red; padding:8px; color:white" %></td>
+        </tr>
+
+    </tbody>
+    </table>
+    <br/><br/>
+
+    </div>
+    <%= link_to "Add New Book", new_book_path , :class=>"btn btn-primary" %>&nbsp;
+    <a href="/" class="btn btn-warning">Back To Home</a>&nbsp;
+    <a href="/book" class="btn btn-success">View All Books</a>&nbsp;
+
+  </body>
+</html>

@@ -1,0 +1,30 @@
+
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  username: postgres
+  password: postgres
+  timeout: 5000
+  host: localhost
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  #pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: myapp
+  username: postgres
+  password: postgres
+
+
+test:
+  <<: *default
+  database: myapp_test
+
+
+production:
+  <<: *default
+  database: myrapp_production
+ 

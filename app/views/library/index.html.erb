@@ -1,0 +1,60 @@
+<html lang="en" dir="ltr">
+<title></title>
+
+  <head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  </head>
+  <body>
+
+<h1 style="text-align: center;">Libraries</h1>
+
+
+<div>&nbsp;</div>
+
+<%= link_to 'Download as Excel',  library_index_path(format: :xlsx) , :class=>"btn btn-success" %>
+
+<div>&nbsp;</div>
+
+<table class="table table-striped table-dark" style="border: 1px solid;width: 100%;height: auto;">
+  <thead>
+    <tr style="height: 45px;">
+      <th scope="col">Sl No</th>
+      <th scope="col">Library Name</th>
+      <th scope="col">Opening Time</th>
+      <th scope="col">Closing Time</th>
+      <th scope="col">Total Books</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+<% i=1 %>
+
+<% @library .each do |library| %>
+    <tr style="border: 1px solid;">
+      <td><%= i  %></td>
+      <td><%= library.name %></td>
+      <td><%= library.opening_time %></td>
+      <td><%= library.closing_time %></td>
+      <td><%= library.books&.count %></td>
+      <td><%= link_to 'Show', library,style: "text-decoration:none; border:1px; background-color:green; padding:8px; color:white" %></td>
+      <td><%= link_to 'Edit', edit_library_path(library),style:  "text-decoration:none; border:1px; background-color:royalblue; padding:8px; color:white" %></td>
+      <td><%= link_to 'Destroy', library, method: :delete, data: { confirm: 'Are you sure delete this library?'},style:"text-decoration:none; border:1px; background-color:red; padding:8px; color:white" %></td>
+    </tr>
+    <%  i=i+1 %>
+<% end %>
+
+
+</tbody>
+</table>
+
+
+<%= link_to "Add New Library", new_library_path , :class=>"btn btn-primary" %>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<div class="container">
+
+<%= form_for :user do |f| %>
+  <div>
+    <label>User Name</lable> <br/>
+    <%= f.text_field :name ,:class=>"lib-text" , required: true %><br><br/>
+
+    <label>User Email</label><br/>
+    <%= f.email_field :email , :class=>"lib-text" , required: true %><br/><br/>
+
+    <label>User Password</label><br/>
+    <%= f.password_field :password, :class=> "lib-text", required: true %><br/><br/>
+
+    <label>User DOB</label><br/>
+    <%= f.date_field :dob, :class=> "lib-text", required: true %><br/><br/>
+
+    
+  </div>
+  <br/>
+
+  <div class="submit-css">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>

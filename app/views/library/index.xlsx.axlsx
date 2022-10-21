@@ -1,0 +1,12 @@
+
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Library") do |sheet|
+  # this is the head row of your spreadsheet
+  sheet.add_row %w(name opening_time closing_time)
+  
+  # each user is a row on your spreadsheet
+  @library.each do |library|
+    sheet.add_row [library.name, library.opening_time, library.closing_time]
+  end
+end

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<title></title>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  </head>
+  <body>
+
+<div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><h2>Candidate Name</h2></th>
+          <th><h2>Resume</h2></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td><h3><%= @resume.name %></h3></td>
+          <td><h3><%= image_tag(@resume.attachment_url, :size => "260x180")  %></h3></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    
+
+
+
+    <a href="/" class="btn btn-success">Back to Home<a>
+    <%= link_to "Resume Page" , resumes_path, :class=>"btn btn-info" %>
+</div>
+  </body>
+</html>
